@@ -1,11 +1,11 @@
 type Props = {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
-const Users = ({children}: Props) => {
+const Users = ({ children }: Props) => {
   return (
     <div className="w-50">
-        {children}
+      {children}
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import UserForm from './userForm/UserForm'
 import UserItem from './userItem/UserItem'
 import Users from './userList/Users'
