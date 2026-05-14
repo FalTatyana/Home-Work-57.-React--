@@ -56,15 +56,15 @@ const App = () => {
   }
 
   return (
-    <div className='d-inline-flex'>
+    <div className='d-flex justify-content-center m-3'>
       <UserForm
         onClickForm={addUser}
         onClickCheckbox={choiceStatus}
         activity={isActive}
       />
       <Users>
-        <table className="table table-striped m-4">
-          <thead>
+        <table className="table table-hover shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+          <thead className="table-light">
             <tr>
               <th scope="col">Name</th>
               <th scope="col">Email</th>

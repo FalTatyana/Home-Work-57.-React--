@@ -4,7 +4,7 @@ type Props = {
 
 const Users = ({children}: Props) => {
   return (
-    <div>
+    <div className="w-50">
         {children}
     </div>
   )
