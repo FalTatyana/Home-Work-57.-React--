@@ -1,17 +1,17 @@
 interface Props {
 name: string
 email: string
-isActive: boolean
+activity: boolean
 role: string
 }
 
-const UserItem = ({name, email, isActive, role}: Props) => {
+const UserItem = ({name, email, activity: activity, role}: Props) => {
     return (
             <tbody>
                 <tr>
                     <td>{name}</td>
                     <td>{email}</td>
-                    <td>{isActive}</td>
+                    <td>{activity ? 'Active' : 'Not active'}</td>
                     <td>{role}</td>
                 </tr>
             </tbody>
