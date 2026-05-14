@@ -1,32 +1,36 @@
-const UserForm = () => {
+interface Props {
+    onClickForm: (e: React.SubmitEvent<HTMLFormElement>) => void
+    onClickCheckbox: () => void
+}
+
+const UserForm = ({onClickForm, onClickCheckbox}: Props) => {
     return (
-        <form className="m-3">
-            <select className="form-select mb-3 mt-3" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">User</option>
-                <option value="2">Editor</option>
-                <option value="3">Admin</option>
+        <form onSubmit={onClickForm} className="m-3">
+            <select name='role' className="form-select mb-3 mt-3" aria-label="Default select example" defaultValue="select">
+                <option value="select">Open this select menu</option>
+                <option value="user">User</option>
+                <option value="editor">Editor</option>
+                <option value="admin">Admin</option>
             </select>
             <div className="input-group mb-3">
-                {/* <span className="input-group-text" id="basic-addon1">Name</span> */}
-                <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
+                <input name='name' type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
             </div>
             <div className="input-group mb-3">
-                {/* <span className="input-group-text" id="basic-addon1">Email</span> */}
-                <input type="text" className="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" />
+                <input name="email" type="text" className="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" />
             </div>
             <div className="form-check">
-                <input className="form-check-input" type="radio" name="radioDefault" id="radioDefault1"/>
+                <input onClick={onClickCheckbox} className="form-check-input" type="radio" name="radioDefault" id="radioDefault1"/>
                     <label className="form-check-label" htmlFor="radioDefault1">
                         No active
                     </label>
             </div>
             <div className="form-check">
-                <input className="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked/>
+                <input onClick={onClickCheckbox} className="form-check-input" type="radio" name="radioDefault" id="radioDefault2"/>
                     <label className="form-check-label" htmlFor="radioDefault2">
                         Active
                     </label>
             </div>
+            <button type="submit" className="btn btn-success mt-3">Success</button>
         </form>
     )
 }
